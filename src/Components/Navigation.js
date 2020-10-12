@@ -8,6 +8,7 @@ import {
 import Fillters from './Fillters';
 import Home from './Home';
 import Men from './Men';
+import Dash from './Dash'
 
 
 export default class Navigation extends Component {
@@ -30,12 +31,16 @@ export default class Navigation extends Component {
             <li>
                 <Link to="/fillters">Fillter</Link>
             </li>
+            <li>
+                <Link to="/dash">Dash</Link>
+            </li>
           </ul>
         </nav>
 
       <Switch>
           <Route path="/fillters" component={Fillters} />
           <Route path="/men" component={Men}/>
+          <Route path="/dash" component={Dash}/>
           <Route path="/" exact component={Home}/>
           
             
