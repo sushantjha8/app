@@ -1,30 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import {dummy_action} from '../Actions/Dummy_action'
+import { Button } from "@blueprintjs/core";
+import {dummy_action} from '../Actions/Dummy_action';
  class Dash extends Component {
     constructor(props){
-        super(props)
+        super(props);
     }
 
     render() {
         return (
             <div>
-                <ul>
-                    {console.log(this.props)}
-                {this.props.data.map((items,index)=>{
-                 return <li key={items.id} onClick={()=>this.props.dummy_action(items.id)}>------------<b>{items.title}</b></li>
-    })}
-              </ul>
+                
+                {this.props.data.map((items)=>{
+
+                    return  <Button intent="success" text={items.id} onClick={()=>this.props.dummy_action(items.title)} />
+                } )} 
+                <p>
+                {this.props.b_d}</p>
             </div>
-        )
-    }
+                )
+            
+
+            
+   
+    
 }
+ }
 
 function mapStateToProps(state)
 {
     return{
-        data:state.dummy_reducers
+        data:state.dummy_reducers,
+        b_d:state.data_reducer
     }
 }
 
